@@ -2,10 +2,15 @@ import React, { Component } from 'react'
 import {
     View,
     Text,
-    Image
+    Image,
+    TextInput,
+    Button,
+    SafeAreaView, 
+    ScrollView
 } from 'react-native'
 import styles from '../Styles'
 import { CheckBox } from 'react-native-elements'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 
 class Perfil extends Component {
@@ -15,7 +20,8 @@ class Perfil extends Component {
         checked3: 'false',
         checked4: 'false',
         checked5: 'false',
-        checked6: 'false'
+        checked6: 'false',
+        tarefa: ''
     }
     render() {
         return (
@@ -25,36 +31,48 @@ class Perfil extends Component {
                     <Text style={styles.textWelcome}>Bem vindo Douglas!</Text>
                 </View>
                 <View style={styles.checklist}>
+                <SafeAreaView style={styles.containerScroll}>
+                    <ScrollView style={styles.scrollView}>
                     <CheckBox
+                            containerStyle = {styles.checkBoxStyle}
                             onIconPress ={() => this.setState({checked1: !this.state.checked1})}
                             title='Nome da tarefa'
                             checked={this.state.checked1}
                             checkedTitle = 'Tarefa Concluida!'
                             checkedColor = 'green'/>
                     <CheckBox
+                            containerStyle = {styles.checkBoxStyle}
                             onIconPress ={() => this.setState({checked2: !this.state.checked2})}
                             title='Nome da tarefa'
                             checked={this.state.checked2}
                             checkedTitle = 'Tarefa Concluida!'
                             checkedColor = 'green'/>
                     <CheckBox
+                            containerStyle = {styles.checkBoxStyle}
                             onIconPress ={() => this.setState({checked3: !this.state.checked3})}
                             title='Nome da tarefa'
                             checked={this.state.checked3}
                             checkedTitle = 'Tarefa Concluida!'
                             checkedColor = 'green'/>
                     <CheckBox
-                            onIconPress ={() => this.setState({checked4: !this.state.checked4})}
+                            containerStyle = {styles.checkBoxStyle}
+                            onIconPress ={() => this.setState({checked3: !this.state.checked3})}
                             title='Nome da tarefa'
-                            checked={this.state.checked4}
+                            checked={this.state.checked3}
                             checkedTitle = 'Tarefa Concluida!'
                             checkedColor = 'green'/>
                     <CheckBox
-                            onIconPress ={() => this.setState({checked5: !this.state.checked5})}
+                            containerStyle = {styles.checkBoxStyle}
+                            onIconPress ={() => this.setState({checked3: !this.state.checked3})}
                             title='Nome da tarefa'
-                            checked={this.state.checked5}
+                            checked={this.state.checked3}
                             checkedTitle = 'Tarefa Concluida!'
                             checkedColor = 'green'/>
+                        </ScrollView>
+                    </SafeAreaView>
+                    <View style = {{flex: 1, marginBottom: 50, justifyContent:'flex-end'}}>
+                    <TextInput placeholder='Escreva sua tarefa' style={styles.inputText} onChangeText={tarefa => this.setState({tarefa})} value={this.state.tarefa}/>
+                   </View>
                 </View>
             </View>
         )

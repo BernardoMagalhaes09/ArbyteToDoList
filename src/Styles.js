@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import Constants from 'expo-constants';
 
 const styles = StyleSheet.create({
     container:{
@@ -71,7 +72,27 @@ const styles = StyleSheet.create({
         margin: 8,
         height:20,
         width:100
-    }
+    },
+    inputText:{
+        marginTop: 10,
+        backgroundColor: '#eee',
+        height: 40,
+        paddingLeft: '50%',
+        borderWidth: 1,
+        borderColor: '#333',
+        borderRadius: 30,
+    },
+    checkBoxStyle:{
+        width: '100%',
+    },
+    containerScroll: {
+        flex: 1,
+        marginTop: Constants.statusBarHeight,
+    },
+    scrollView: {
+        flex: 1,
+        width: '100%',
+    },
 })
 
 export default styles
