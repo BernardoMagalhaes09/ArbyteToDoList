@@ -10,25 +10,26 @@ import {
 } from 'react-native'
 import styles from '../Styles'
 import { CheckBox } from 'react-native-elements'
-import { TouchableOpacity } from 'react-native-gesture-handler'
+import axios from 'axios'
 
 
 class Perfil extends Component {
-    state = {
-        checked1: 'false',
-        checked2: 'false',
-        checked3: 'false',
-        checked4: 'false',
-        checked5: 'false',
-        checked6: 'false',
-        tarefa: ''
+    constructor() {
+        super()
+        this.state = {
+            name: ''
+        }
+    }
+    api = () => {
+        axios.get('https://arbyte-todo-list-api.herokuapp.com')
+        .then(res => {this.setState({name: res.data.fullName})})
     }
     render() {
         return (
             <View style={styles.container}>
                 <View style={styles.upImage}>
                     <Image style={styles.arbyte} source={{ uri: 'https://www.arbyte.com.br/img/logo-footer.png' }} />
-                    <Text style={styles.textWelcome}>Bem vindo Douglas!</Text>
+                    <Text style={styles.textWelcome}>Bem vindo {this.state.name}</Text>
                 </View>
                 <View style={styles.checklist}>
                 <SafeAreaView style={styles.containerScroll}>
@@ -38,34 +39,6 @@ class Perfil extends Component {
                             onIconPress ={() => this.setState({checked1: !this.state.checked1})}
                             title='Nome da tarefa'
                             checked={this.state.checked1}
-                            checkedTitle = 'Tarefa Concluida!'
-                            checkedColor = 'green'/>
-                    <CheckBox
-                            containerStyle = {styles.checkBoxStyle}
-                            onIconPress ={() => this.setState({checked2: !this.state.checked2})}
-                            title='Nome da tarefa'
-                            checked={this.state.checked2}
-                            checkedTitle = 'Tarefa Concluida!'
-                            checkedColor = 'green'/>
-                    <CheckBox
-                            containerStyle = {styles.checkBoxStyle}
-                            onIconPress ={() => this.setState({checked3: !this.state.checked3})}
-                            title='Nome da tarefa'
-                            checked={this.state.checked3}
-                            checkedTitle = 'Tarefa Concluida!'
-                            checkedColor = 'green'/>
-                    <CheckBox
-                            containerStyle = {styles.checkBoxStyle}
-                            onIconPress ={() => this.setState({checked3: !this.state.checked3})}
-                            title='Nome da tarefa'
-                            checked={this.state.checked3}
-                            checkedTitle = 'Tarefa Concluida!'
-                            checkedColor = 'green'/>
-                    <CheckBox
-                            containerStyle = {styles.checkBoxStyle}
-                            onIconPress ={() => this.setState({checked3: !this.state.checked3})}
-                            title='Nome da tarefa'
-                            checked={this.state.checked3}
                             checkedTitle = 'Tarefa Concluida!'
                             checkedColor = 'green'/>
                         </ScrollView>
