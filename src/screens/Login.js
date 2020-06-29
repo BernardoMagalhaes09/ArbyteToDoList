@@ -9,7 +9,6 @@ import {
 } from 'react-native'
 import styles from '../Styles'
 import validaLogin from '../api/validaLogin'
-import { normalize } from 'react-native-elements'
 
 class Login extends Component {
     constructor() {

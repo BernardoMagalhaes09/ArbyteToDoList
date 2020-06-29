@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     },
     checklist:{
         flex:7,
-        width: '100%',
+        width: '100%'
     },
     upImage:{
         flex: 3,
@@ -93,6 +93,42 @@ const styles = StyleSheet.create({
         flex: 1,
         width: '100%',
     },
+    containerTarefa:{
+        flexDirection: 'row',
+        borderColor: '#AAA',
+        borderBottomWidth: 1,
+        alignItems: 'center',
+    },
+    checkContainer:{
+        width:'10%',
+        alignItems: 'center',
+    },
+    iconEdit:{
+        width: '10%',
+    },
+    textList:{
+        width: '70%'
+    },
+    buttonAdd:{
+        backgroundColor: '#993399',
+        borderRadius: 60,
+        height: 40,
+        width: 130,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 10
+    },
+    inputTarefa:{
+        alignItems:'center',
+        height:50,
+        width:'80%',
+        borderColor: '#999',
+        borderWidth: 2,
+        marginTop: 10,
+        justifyContent:'center',
+        borderRadius: 60,
+        paddingLeft: '2%'
+    }
 })
 
 export default styles

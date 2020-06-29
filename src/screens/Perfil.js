@@ -2,15 +2,12 @@ import React, { Component } from 'react'
 import {
     View,
     Text,
-    Image,
-    TextInput,
-    Button,
-    SafeAreaView, 
-    ScrollView
+    Image
 } from 'react-native'
 import styles from '../Styles'
-import { CheckBox } from 'react-native-elements'
 import axios from 'axios'
+import ToDoList from '../components/ToDoList'
+import Counter from '../components/counter'
 
 
 class Perfil extends Component {
@@ -29,23 +26,11 @@ class Perfil extends Component {
             <View style={styles.container}>
                 <View style={styles.upImage}>
                     <Image style={styles.arbyte} source={{ uri: 'https://www.arbyte.com.br/img/logo-footer.png' }} />
-                    <Text style={styles.textWelcome}>Bem vindo {this.state.name}</Text>
+                    <Text style={styles.textWelcome}>Bem vindo</Text>
                 </View>
                 <View style={styles.checklist}>
-                <SafeAreaView style={styles.containerScroll}>
-                    <ScrollView style={styles.scrollView}>
-                    <CheckBox
-                            containerStyle = {styles.checkBoxStyle}
-                            onIconPress ={() => this.setState({checked1: !this.state.checked1})}
-                            title='Nome da tarefa'
-                            checked={this.state.checked1}
-                            checkedTitle = 'Tarefa Concluida!'
-                            checkedColor = 'green'/>
-                        </ScrollView>
-                    </SafeAreaView>
-                    <View style = {{flex: 1, marginBottom: 50, justifyContent:'flex-end'}}>
-                    <TextInput placeholder='Escreva sua tarefa' style={styles.inputText} onChangeText={tarefa => this.setState({tarefa})} value={this.state.tarefa}/>
-                   </View>
+                    <ToDoList/>
+                    <Counter/>
                 </View>
             </View>
         )
