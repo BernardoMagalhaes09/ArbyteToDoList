@@ -21,7 +21,6 @@ class Register extends Component {
     }
 
     render() {
-        console.log('state', this.state)
         return (
             <View style={styles.container}>
                 <Image style={styles.logo} source={{ uri: 'https://cdn.awsli.com.br/600x450/321/321815/produto/33953213/d2911b5eea.jpg' }} />
@@ -35,8 +34,7 @@ class Register extends Component {
                     onPress={() => userRegister(this.state.name, this.state.email)
                     .then(res => { Alert.alert('Você finalizou seu cadastro'); this.props.navigation.navigate('Login');
                     this.setState({email: ''}); this.setState({name: ''})})
-                    .catch(err => { Alert.alert('Seus dados estão inválidos');this.props.navigation.navigate('Login');
-                    this.setState({email: ''}); this.setState({name: ''})})}>
+                    .catch(err => { Alert.alert('Seus dados estão inválidos')})}>
                     <Text style={styles.textLogin}>Cadastrar</Text>
                 </TouchableOpacity>
             </View>
