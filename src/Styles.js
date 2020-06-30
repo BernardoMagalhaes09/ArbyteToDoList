@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import Constants from 'expo-constants';
 
 const styles = StyleSheet.create({
     container:{
@@ -45,7 +46,6 @@ const styles = StyleSheet.create({
     },
     checklist:{
         flex:7,
-        width: '100%',
     },
     upImage:{
         flex: 3,
@@ -71,6 +71,68 @@ const styles = StyleSheet.create({
         margin: 8,
         height:20,
         width:100
+    },
+    inputText:{
+        marginTop: 10,
+        backgroundColor: '#eee',
+        height: 35,
+        paddingLeft: '33%',
+        borderWidth: 1,
+        borderColor: '#333',
+        borderRadius: 30,
+    },
+    checkBoxStyle:{
+        width: '100%',
+    },
+    containerScroll: {
+        flex: 1,
+        marginTop: Constants.statusBarHeight,
+    },
+    scrollView: {
+        flex: 1,
+        width: '100%',
+    },
+    containerTarefa:{
+        flex: 1,
+        flexDirection: 'row',
+        borderColor: '#AAA',
+        borderBottomWidth: 1,
+        alignItems: 'center',
+    },
+    checkContainer:{
+        width:'5%',
+        alignItems: 'center',
+    },
+    iconEdit:{
+        width: '8%',
+    },
+    iconRemove:{
+        width: '8%',
+    },
+    textList:{
+        width: '79%',
+        alignItems:'center',
+        justifyContent:'center'
+    },
+    buttonAdd:{
+        backgroundColor: '#993399',
+        borderRadius: 60,
+        height: 40,
+        width: 130,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 10
+    },
+    inputTarefa:{
+        alignItems:'center',
+        height:50,
+        width:'80%',
+        borderColor: '#999',
+        borderWidth: 2,
+        marginTop: 10,
+        justifyContent:'center',
+        borderRadius: 60,
+        paddingLeft: '2%'
     }
 })
 
