@@ -1,14 +1,14 @@
-export function addToDo(text) {
+export function addToDo(task) {
     return ({
         type: 'ADD_TODO',
-        text: text  
+        text: task  
     })
 }
 
-export function changeStatusToDo(id) {
-    return ({
-        type: 'CHANGE_STATUS_TODO',
-        id: id  
+export function addToList(list) {
+    return({
+        type: 'ADD_TO_LIST',
+        list: list
     })
 }
 

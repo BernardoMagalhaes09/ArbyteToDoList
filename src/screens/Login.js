@@ -5,7 +5,8 @@ import {
     Image,
     TouchableOpacity,
     TextInput,
-    Alert
+    Alert,
+    AsyncStorage
 } from 'react-native'
 import styles from '../Styles'
 import validaLogin from '../api/validaLogin'
@@ -18,6 +19,8 @@ class Login extends Component {
             email: ''
         }
     }
+
+
 
     cadastro = () => {
         this.props.navigation.navigate('Register')
@@ -32,7 +35,10 @@ class Login extends Component {
                     keybordtype='email-adress' />
                 <TouchableOpacity style={styles.buttomLogin} onPress={() => validaLogin(this.state.email)
                     .then(res => {
-                        this.props.navigation.navigate('Perfil', { name: res.data.user.fullName, token: res.data.token });
+                        return AsyncStorage.setItem('userData', JSON.stringify(res.data))
+                    })
+                    .then(() => {
+                        this.props.navigation.navigate('TelaDeTarefas');
                         this.setState({ email: '' })
                     })
                     .catch(err => {console.log(err); Alert.alert('Dados inválidos')})
