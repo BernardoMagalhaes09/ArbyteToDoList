@@ -10,8 +10,6 @@ import axios from 'axios'
 import ToDoList from '../components/ToDoList'
 import * as todoActions from '../actions/todos'
 import { connect } from 'react-redux'
-import todos from '../reducers/todos'
-import deleteTask from '../api/delete'
 
 
 class TelaDeTarefas extends Component {
@@ -19,8 +17,7 @@ class TelaDeTarefas extends Component {
         super(props)
         console.log(props)
         this.state = {
-            userData: {}
-        }
+            userData: {user: {}}         }
     }
 
     editToDo = (todo) => axios.put(`https://arbyte-todo-list-api.herokuapp.com/tasks/${todo.id}`, todo,{
@@ -61,7 +58,7 @@ class TelaDeTarefas extends Component {
             <View style={styles.container}>
                 <View style={styles.upImage}>
                     <Image style={styles.arbyte} source={{ uri: 'https://www.arbyte.com.br/img/logo-footer.png' }} />
-                    <Text style={styles.textWelcome}>Bem vindo</Text>
+                    <Text style={styles.textWelcome}>Bem vindo {this.state.userData.user.fullName}</Text>
                 </View>
                 <View style={styles.checklist}>
                     <ToDoList todos={this.props.todos.list}

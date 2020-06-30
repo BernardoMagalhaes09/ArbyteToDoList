@@ -46,7 +46,6 @@ const styles = StyleSheet.create({
     },
     checklist:{
         flex:7,
-        width: '100%'
     },
     upImage:{
         flex: 3,
@@ -94,20 +93,26 @@ const styles = StyleSheet.create({
         width: '100%',
     },
     containerTarefa:{
+        flex: 1,
         flexDirection: 'row',
         borderColor: '#AAA',
         borderBottomWidth: 1,
         alignItems: 'center',
     },
     checkContainer:{
-        width:'10%',
+        width:'5%',
         alignItems: 'center',
     },
     iconEdit:{
-        width: '10%',
+        width: '8%',
+    },
+    iconRemove:{
+        width: '8%',
     },
     textList:{
-        width: '70%'
+        width: '79%',
+        alignItems:'center',
+        justifyContent:'center'
     },
     buttonAdd:{
         backgroundColor: '#993399',

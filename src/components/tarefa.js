@@ -31,6 +31,7 @@ class Tarefa extends Component {
                 </View>
                 <View style={styles.textList}>
                     <TextInput
+                        multiline = {true}
                         editable={this.state.editable}
                         value={this.state.value}
                         onChangeText={(text) => this.setState({ value: text })}>
@@ -43,7 +44,7 @@ class Tarefa extends Component {
                     <View style={styles.iconEdit}>
                         <Icon name="edit" size={24} color="#964B00" onPress={() => { this.setState({ editable: true }) }} />
                     </View>}
-                <View style={styles.iconEdit}>
+                <View style={styles.iconRemove}>
                     <Icon name="remove" size={24} color="#FF0000" onPress={() => { this.props.deleteToDo(this.props.todo.id) }} />
                 </View>
             </View>
